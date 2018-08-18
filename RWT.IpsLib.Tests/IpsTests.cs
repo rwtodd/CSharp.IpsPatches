@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 
 
-namespace RWT.IpsPatch.Tests
+namespace RWT.IpsLib.Tests
 {
 
     [TestClass]

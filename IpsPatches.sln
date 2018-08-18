@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpsLib", "Lib\IpsLib.csproj", "{A0166584-1C70-4F25-ACF4-FB842B59A37A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RWT.IpsLib", "RWT.IpsLib\RWT.IpsLib.csproj", "{A0166584-1C70-4F25-ACF4-FB842B59A37A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Tests", "Lib.Tests\Lib.Tests.csproj", "{141A4684-3514-41FB-8648-C3A295C2FBAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RWT.IpsLib.Tests", "RWT.IpsLib.Tests\RWT.IpsLib.Tests.csproj", "{141A4684-3514-41FB-8648-C3A295C2FBAD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpsApply", "Apply\IpsApply.csproj", "{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpsApply", "IpsApply\IpsApply.csproj", "{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

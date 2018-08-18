@@ -5,6 +5,7 @@
     <VersionPrefix>1.0.1</VersionPrefix>
     <Authors>Richard Todd</Authors>
     <Company>Richard Todd</Company>
+    <PackageId>RWT.IpsLib</PackageId>
   </PropertyGroup>
 
 </Project>

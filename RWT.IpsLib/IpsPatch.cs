@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Linq;
 
-namespace RWT.IpsPatch {
+namespace RWT.IpsLib {
 
 public abstract class Patch {
 	/// <summary>Apply the patch to a random-access file</summary>

@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using RWT.IpsPatch;
+using RWT.IpsLib;
 using RWT.ArgParse;
 
 namespace RWT.IpsApply

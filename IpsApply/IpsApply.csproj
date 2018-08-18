@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="ArgParse" Version="1.0.1" />
+    <PackageReference Include="RWT.ArgParse" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lib\IpsLib.csproj" />
+    <ProjectReference Include="..\RWT.IpsLib\RWT.IpsLib.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
