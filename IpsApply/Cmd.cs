@@ -1,34 +1,35 @@
 using System;
 using System.IO;
+using Args = RWT.ArgParse;
 using RWT.IpsLib;
-using RWT.ArgParse;
 
 namespace RWT.IpsApply
 {
 
     class Cmd
-	{
+    {
 
-		public static void Main(String[] args)
-		{
+        public static void Main(String[] args)
+        {
             String ipsFile = null, srcFile = null, resultFile = null;
 
-            var ap = new ArgParser(
-                new StrArg("-ips","<file> the IPS change file (REQUIRED)") {
+            var ap = new Args.ArgParser(
+                new Args.ExistingFileArg("-ips", "<file> the IPS change file (REQUIRED)")
+                {
                     Command = (fn) => ipsFile = fn,
                     Required = true
                 },
-                new StrArg("-src","<file> the original source (REQUIRED)")
+                new Args.ExistingFileArg("-src", "<file> the original source (REQUIRED)")
                 {
                     Command = (fn) => srcFile = fn,
                     Required = true
                 },
-                new StrArg("-dest","<file> the destination output file (REQUIRED)")
+                new Args.StrArg("-dest", "<file> the destination output file (REQUIRED)")
                 {
                     Command = (fn) => resultFile = fn,
                     Required = true
                 },
-                new HelpArg("-help")
+                new Args.HelpArg("-help")
                 {
                     Command = (opts) =>
                     {
@@ -37,45 +38,42 @@ namespace RWT.IpsApply
                         opts(Console.Error);
                         Environment.Exit(1);
                     }
-                });
+                })
+            {
+                ExtrasRange = (0, 0)
+            };
 
-            try { 
-                var extras = ap.Parse(args);
+            try
+            {
+                ap.Parse(args);
+                Console.WriteLine($"Patching <{srcFile}> with <{ipsFile}> to produce <{resultFile}>");
 
-                if (extras.Count != 0)
+                int count = 1;
+                File.Copy(srcFile, resultFile);
+                using (FileStream ips = File.OpenRead(ipsFile),
+                    res = File.OpenWrite(resultFile))
                 {
-                    throw new ArgumentException("Unknown arguments given on the command line!");
+                    IpsFormat.ForEachPatchAsync(ips,
+                        (p) =>
+                        {
+                            Console.WriteLine($"Patch {count}: {p}");
+                            ++count;
+                            return p.ApplyAsync(res);
+                        }).Wait();
                 }
-           
-
-    			Console.WriteLine($"Patching <{srcFile}> with <{ipsFile}> to produce <{resultFile}>");
-
-				int count = 1;
-				File.Copy(srcFile, resultFile);
-				using (FileStream ips = File.OpenRead(ipsFile),
-					res = File.OpenWrite(resultFile))
-				{
-					IpsFormat.ForEachPatchAsync(ips,
-						(p) =>
-						{
-							Console.WriteLine($"Patch {count}: {p}");
-							++count;
-							return p.ApplyAsync(res);
-						}).Wait();
-				}
-			}
-            catch (ArgParseException ape)
+            }
+            catch (Args.ArgParseException ape)
             {
                 Console.Error.WriteLine(ape.Message);
                 Console.Error.WriteLine();
                 ap.ActivateSwitch("-help");
             }
-			catch (Exception e)
-			{
-				Console.Error.WriteLine(e);
-			}
-		}
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e);
+            }
+        }
 
-	}
+    }
 
 } // end namespace
