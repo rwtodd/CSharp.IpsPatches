@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpsLib", "Lib\IpsLib.csproj", "{A0166584-1C70-4F25-ACF4-FB842B59A37A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Tests", "Lib.Tests\Lib.Tests.csproj", "{141A4684-3514-41FB-8648-C3A295C2FBAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpsApply", "Apply\IpsApply.csproj", "{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0166584-1C70-4F25-ACF4-FB842B59A37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0166584-1C70-4F25-ACF4-FB842B59A37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0166584-1C70-4F25-ACF4-FB842B59A37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0166584-1C70-4F25-ACF4-FB842B59A37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141A4684-3514-41FB-8648-C3A295C2FBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141A4684-3514-41FB-8648-C3A295C2FBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141A4684-3514-41FB-8648-C3A295C2FBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141A4684-3514-41FB-8648-C3A295C2FBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E56E9E5-0659-4D0D-A291-5FEEB14A1274}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BF15FE8-E6A0-4405-B5F6-F28DDD654CEF}
+	EndGlobalSection
+EndGlobal
